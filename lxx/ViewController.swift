@@ -9,10 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
-    static{
-    
-    }
+    var btn:UIButton?
 
     override func viewDidLoad() {
         super.viewDidLoad()
