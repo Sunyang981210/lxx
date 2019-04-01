@@ -1,16 +1,9 @@
 //
 //  ViewController.swift
-//  lxx
+//  translate
 //
-//  Created by Mac on 2019/4/1.
-//  Copyright © 2019 YangSun. All rights reserved.
-//
-//
-//  ViewController.swift
-//  lxx
-//
-//  Created by niit_099 on 2019/4/1.
-//  Copyright © 2019 niit_099. All rights reserved.
+//  Created by niit97 on 2019/4/1.
+//  Copyright © 2019 niit97. All rights reserved.
 //
 
 import UIKit
@@ -20,80 +13,44 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.view.backgroundColor = #colorLiteral(red: 0.9591775537, green: 0.9593380094, blue: 0.9591564536, alpha: 1)
-        let screen = UIScreen.main.bounds
+        let bt1 = UIButton.init(frame: CGRect.init(x:10,y:20+44,width:
+            40,height: 40))
+        bt1.setTitleColor(UIColor.blue, for: .normal)
+        bt1.setBackgroundImage(UIImage(named: "Image"), for: .normal)
+        self.view.addSubview(bt1)
+        bt1.addTarget(self, action: #selector(action(bt1:)), for: UIControl.Event.touchUpOutside)
         
-        //1. 创建NavigationBar
-        let navigationBarHeight: CGFloat = 44//默认高度
-        let navigationBar = UINavigationBar(frame: CGRect(x: 0, y: 30 , width: screen.size.width, height: navigationBarHeight))
-        let leftbtn = UIBarButtonItem(title:"返回",style:.plain,target: self,action: #selector(ViewController.save(_:)))
-        let rightbtn = UIBarButtonItem(title:"登录",style:.plain,target: self,action: #selector(ViewController.add(_:)))
-        
-        leftbtn.tintColor = UIColor.orange
-        let navigationItem = UINavigationItem(title:"会员登陆")
-        navigationItem.leftBarButtonItem = leftbtn
-        navigationItem.rightBarButtonItem = rightbtn
-        
-        navigationBar.items = [navigationItem]
-        self.view.addSubview(navigationBar)
+        let lb1 = UILabel.init(frame: CGRect.init(x: 60, y: 20+44, width: 100, height: 40))
+        lb1.text = "实时翻译"
+        lb1.textColor = UIColor.black
+        self.view.addSubview(lb1)
         
         
-        let imgNum = UIImageView.init(frame: CGRect.init(x: 40, y: 0, width: 30, height: 20))
-        //        imgview.image = UIImage.init(named: "audi.jpg");
-        imgNum.image = UIImage.init(named: "phone.png")
-        self.view.addSubview(imgNum);
+        let lb2 = UILabel.init(frame: CGRect.init(x: 50, y: 20+44+50, width: 100, height: 40))
+        lb2.text = "简体中文"
+        lb2.textColor = UIColor.black
+        self.view.addSubview(lb2)
         
-        let imgPsw = UIImageView.init(frame: CGRect.init(x: 40, y: 0, width: 30, height: 20))
-        //        imgview.image = UIImage.init(named: "audi.jpg");
-        imgPsw.image = UIImage.init(named: "password.png")
-        self.view.addSubview(imgPsw);
+        let lb3 = UILabel.init(frame: CGRect.init(x: 260, y: 20+44+50, width: 100, height: 40))
+        lb3.text = "英语"
+        lb3.textColor = UIColor.black
+        self.view.addSubview(lb3)
         
-        let username = UITextField.init(frame: CGRect.init(x: 0, y: navigationBar.frame.origin.y + navigationBar.frame.size.height + 20, width: self.view.bounds.size.width, height: 30));
-        username.backgroundColor = UIColor.white;
-        username.placeholder = "手机号码";
-        username.leftView = imgNum
-        username.leftViewMode = UITextField.ViewMode.always
-        username.textColor = UIColor.black;
+        let tf1 = UITextField.init(frame: CGRect.init(x: 70, y: 700, width: 200, height: 40))
+        tf1.backgroundColor = UIColor.lightGray
+        tf1.placeholder = "请输入要翻译的文字"
+        self.view.addSubview(tf1)
         
-        self.view.addSubview(username);
-        
-        let password = UITextField.init(frame: CGRect.init(x: 0, y: username.frame.origin.y + username.frame.size.height + 4, width: self.view.bounds.size.width, height: 30));
-        password.backgroundColor = UIColor.white;
-        password.placeholder = "密码";
-        password.textColor = UIColor.black;
-        password.leftView = imgPsw
-        password.leftViewMode = UITextField.ViewMode.always
-        self.view.addSubview(password);
-        
-        let btnForget = UIButton.init(frame: CGRect.init(x: 20, y:password.frame.origin.y + password.frame.height + 20 , width: 100, height: 30))
-        btnForget.setTitle("忘记密码", for: UIControl.State.normal)
-        btnForget.backgroundColor = self.view.backgroundColor
-        btnForget.setTitleColor(#colorLiteral(red: 0.4756349325, green: 0.4756467342, blue: 0.4756404161, alpha: 1), for: UIControl.State.normal)
-        
-        self.view.addSubview(btnForget)
-        
-    }
-    @objc func save(_ sender: AnyObject){
+        let bt2 = UIButton.init(frame: CGRect.init(x:280,y:700,width:
+            40,height: 40))
+        bt2.setTitleColor(UIColor.blue, for: .normal)
+        bt2.setTitle("发送", for: UIControl.State.normal)
+        self.view.addSubview(bt2)
         
     }
     
-    @objc func add(_ sender: AnyObject){
-        
+    @objc func action(bt1:UIButton){
+        print("点击了这个按钮")
     }
-}
-
-
-
-
-
-    
-    
-    
-    
-    
-    
-    
-
-
 }
 
